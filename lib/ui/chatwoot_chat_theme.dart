@@ -10,7 +10,7 @@ const CHATWOOT_AVATAR_COLORS = [CHATWOOT_COLOR_PRIMARY];
 class ChatwootChatTheme extends ChatTheme {
   /// Creates a chatwoot chat theme. Use this constructor if you want to
   /// override only a couple of variables.
-  const ChatwootChatTheme({
+  ChatwootChatTheme({
     Widget? attachmentButtonIcon,
     Color backgroundColor = CHATWOOT_BG_COLOR,
     TextStyle dateDividerTextStyle = const TextStyle(
@@ -22,12 +22,12 @@ class ChatwootChatTheme extends ChatTheme {
     Widget? deliveredIcon,
     Widget? documentIcon,
     TextStyle emptyChatPlaceholderTextStyle = const TextStyle(
-      color: NEUTRAL_2,
+      color: neutral2,
       fontSize: 16,
       fontWeight: FontWeight.w500,
       height: 1.5,
     ),
-    Color errorColor = ERROR,
+    Color errorColor = error,
     Widget? errorIcon,
     Color inputBackgroundColor = Colors.white,
     BorderRadius inputBorderRadius = const BorderRadius.all(
@@ -48,20 +48,20 @@ class ChatwootChatTheme extends ChatTheme {
       height: 1.5,
     ),
     TextStyle receivedMessageCaptionTextStyle = const TextStyle(
-      color: NEUTRAL_2,
+      color: neutral2,
       fontSize: 12,
       fontWeight: FontWeight.w500,
       height: 1.333,
     ),
-    Color receivedMessageDocumentIconColor = PRIMARY,
+    Color receivedMessageDocumentIconColor = primary,
     TextStyle receivedMessageLinkDescriptionTextStyle = const TextStyle(
-      color: NEUTRAL_0,
+      color: neutral0,
       fontSize: 14,
       fontWeight: FontWeight.w400,
       height: 1.428,
     ),
     TextStyle receivedMessageLinkTitleTextStyle = const TextStyle(
-      color: NEUTRAL_0,
+      color: neutral0,
       fontSize: 16,
       fontWeight: FontWeight.w800,
       height: 1.375,
@@ -77,27 +77,27 @@ class ChatwootChatTheme extends ChatTheme {
       height: 1.5,
     ),
     TextStyle sentMessageCaptionTextStyle = const TextStyle(
-      color: NEUTRAL_7_WITH_OPACITY,
+      color: neutral7WithOpacity,
       fontSize: 12,
       fontWeight: FontWeight.w500,
       height: 1.333,
     ),
-    Color sentMessageDocumentIconColor = NEUTRAL_7,
+    Color sentMessageDocumentIconColor = neutral7,
     TextStyle sentMessageLinkDescriptionTextStyle = const TextStyle(
-      color: NEUTRAL_7,
+      color: neutral7,
       fontSize: 14,
       fontWeight: FontWeight.w400,
       height: 1.428,
     ),
     TextStyle sentMessageLinkTitleTextStyle = const TextStyle(
-      color: NEUTRAL_7,
+      color: neutral7,
       fontSize: 16,
       fontWeight: FontWeight.w800,
       height: 1.375,
     ),
     List<Color> userAvatarNameColors = CHATWOOT_AVATAR_COLORS,
     TextStyle userAvatarTextStyle = const TextStyle(
-      color: NEUTRAL_7,
+      color: neutral7,
       fontSize: 12,
       fontWeight: FontWeight.w800,
       height: 1.333,
@@ -142,5 +142,43 @@ class ChatwootChatTheme extends ChatTheme {
           userAvatarNameColors: userAvatarNameColors,
           userAvatarTextStyle: userAvatarTextStyle,
           userNameTextStyle: userNameTextStyle,
+          // added parameters
+          attachmentButtonMargin: const EdgeInsets.all(8.0),
+          dateDividerMargin: const EdgeInsets.symmetric(vertical: 8.0),
+          // inputSurfaceTintColor: Colors.grey.shade200,
+          // inputElevation: 0,
+          inputMargin: const EdgeInsets.symmetric(horizontal: 8.0),
+          inputPadding:
+              const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+          inputTextDecoration: InputDecoration.collapsed(hintText: 'Message'),
+          messageInsetsHorizontal: 16.0,
+          messageInsetsVertical: 8.0,
+          // messageMaxWidth: 200.0,
+          receivedEmojiMessageTextStyle: const TextStyle(),
+          sendButtonMargin: const EdgeInsets.all(8.0),
+          sentEmojiMessageTextStyle: const TextStyle(),
+          statusIconPadding: const EdgeInsets.all(4.0),
+          // systemMessageTheme: SystemMessageTheme(
+          //   margin: const EdgeInsets.all(16.0),
+          //   textStyle: const TextStyle(),
+          //   boldTextStyle: const TextStyle(fontWeight: FontWeight.bold),
+          //   codeTextStyle: const TextStyle(fontFamily: 'monospace'),
+          //   linkTextStyle: const TextStyle(color: Colors.blue),
+          // ),
+          // typingIndicatorTheme: TypingIndicatorTheme(
+          //   animatedCircleSize: 20.0,
+          //   animatedCirclesColor: Colors.blue,
+          //   bubbleBorder: BorderRadius.circular(8),
+          //   bubbleColor: Colors.white,
+          //   countAvatarColor: Colors.blue,
+          //   countTextColor: Colors.white,
+          //   multipleUserTextStyle:
+          //       TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+          // ),
+          // unreadHeaderTheme: UnreadHeaderTheme(
+          //   color: Colors.black,
+          //   textStyle: TextStyle(),
+          // ),
+          userAvatarImageBackgroundColor: Colors.transparent,
         );
 }

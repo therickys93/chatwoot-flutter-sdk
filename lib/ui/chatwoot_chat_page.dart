@@ -60,7 +60,7 @@ class ChatwootChat extends StatefulWidget {
   /// Show user names for received messages.
   final bool showUserNames;
 
-  final ChatwootChatTheme theme;
+  final ChatwootChatTheme? theme;
 
   /// See [ChatwootL10n]
   final ChatwootL10n l10n;
@@ -131,7 +131,7 @@ class ChatwootChat extends StatefulWidget {
       this.onTextChanged,
       this.showUserAvatars = true,
       this.showUserNames = true,
-      this.theme = const ChatwootChatTheme(),
+      this.theme,
       this.l10n = const ChatwootL10n(),
       this.timeFormat,
       this.dateFormat,
@@ -158,6 +158,8 @@ class ChatwootChat extends StatefulWidget {
 
 @deprecated
 class _ChatwootChatState extends State<ChatwootChat> {
+  late final ChatwootChatTheme theme = widget.theme ?? ChatwootChatTheme();
+
   ///
   List<types.Message> _messages = [];
 
@@ -345,7 +347,9 @@ class _ChatwootChatState extends State<ChatwootChat> {
     types.PreviewData previewData,
   ) {
     final index = _messages.indexWhere((element) => element.id == message.id);
-    final updatedMessage = _messages[index].copyWith(previewData: previewData);
+    // TODO: update message with preview data
+    final updatedMessage =
+        _messages[index].copyWith(/*previewData: previewData*/);
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       setState(() {
@@ -402,7 +406,7 @@ class _ChatwootChatState extends State<ChatwootChat> {
     final horizontalPadding = widget.isPresentedInDialog ? 8.0 : 16.0;
     return Scaffold(
       appBar: widget.appBar,
-      backgroundColor: widget.theme.backgroundColor,
+      backgroundColor: theme.backgroundColor,
       body: Column(
         children: [
           Flexible(
@@ -411,19 +415,21 @@ class _ChatwootChatState extends State<ChatwootChat> {
                   left: horizontalPadding, right: horizontalPadding),
               child: Chat(
                 messages: _messages,
-                onMessageTap: _handleMessageTap,
+                onMessageTap: (context, message) =>
+                    _handleMessageTap.call(message),
                 onPreviewDataFetched: _handlePreviewDataFetched,
                 onSendPressed: _handleSendPressed,
                 user: _user,
                 onEndReached: widget.onEndReached,
                 onEndReachedThreshold: widget.onEndReachedThreshold,
-                onMessageLongPress: widget.onMessageLongPress,
-                onTextChanged: widget.onTextChanged,
+                onMessageLongPress: (context, message) =>
+                    widget.onMessageLongPress?.call(message),
+                // onTextChanged: widget.onTextChanged,
                 showUserAvatars: widget.showUserAvatars,
                 showUserNames: widget.showUserNames,
                 timeFormat: widget.timeFormat ?? DateFormat.Hm(),
                 dateFormat: widget.timeFormat ?? DateFormat("EEEE MMMM d"),
-                theme: widget.theme,
+                theme: theme,
                 l10n: widget.l10n,
               ),
             ),
