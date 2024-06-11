@@ -161,9 +161,6 @@ class ChatwootChatTheme extends ChatTheme {
           systemMessageTheme: SystemMessageTheme(
             margin: const EdgeInsets.all(16.0),
             textStyle: const TextStyle(),
-            boldTextStyle: const TextStyle(fontWeight: FontWeight.bold),
-            codeTextStyle: const TextStyle(fontFamily: 'monospace'),
-            linkTextStyle: const TextStyle(color: Colors.blue),
           ),
           // typingIndicatorTheme: TypingIndicatorTheme(
           //   animatedCircleSize: 20.0,
