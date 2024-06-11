@@ -172,10 +172,10 @@ class ChatwootChatTheme extends ChatTheme {
             multipleUserTextStyle:
                 TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
           ),
-          // unreadHeaderTheme: UnreadHeaderTheme(
-          //   color: Colors.black,
-          //   textStyle: TextStyle(),
-          // ),
+          unreadHeaderTheme: UnreadHeaderTheme(
+            color: Colors.black,
+            textStyle: TextStyle(),
+          ),
           userAvatarImageBackgroundColor: Colors.transparent,
         );
 }
