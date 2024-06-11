@@ -158,13 +158,13 @@ class ChatwootChatTheme extends ChatTheme {
           sendButtonMargin: const EdgeInsets.all(8.0),
           sentEmojiMessageTextStyle: const TextStyle(),
           statusIconPadding: const EdgeInsets.all(4.0),
-          // systemMessageTheme: SystemMessageTheme(
-          //   margin: const EdgeInsets.all(16.0),
-          //   textStyle: const TextStyle(),
-          //   boldTextStyle: const TextStyle(fontWeight: FontWeight.bold),
-          //   codeTextStyle: const TextStyle(fontFamily: 'monospace'),
-          //   linkTextStyle: const TextStyle(color: Colors.blue),
-          // ),
+          systemMessageTheme: SystemMessageTheme(
+            margin: const EdgeInsets.all(16.0),
+            textStyle: const TextStyle(),
+            boldTextStyle: const TextStyle(fontWeight: FontWeight.bold),
+            codeTextStyle: const TextStyle(fontFamily: 'monospace'),
+            linkTextStyle: const TextStyle(color: Colors.blue),
+          ),
           // typingIndicatorTheme: TypingIndicatorTheme(
           //   animatedCircleSize: 20.0,
           //   animatedCirclesColor: Colors.blue,
