@@ -48,6 +48,6 @@ class ChatwootL10n extends ChatL10n {
           fileButtonAccessibilityLabel: fileButtonAccessibilityLabel,
           inputPlaceholder: inputPlaceholder,
           sendButtonAccessibilityLabel: sendButtonAccessibilityLabel,
-          // unreadMessagesLabel: 'Unread Messages',
+          unreadMessagesLabel: 'Unread Messages',
         );
 }
