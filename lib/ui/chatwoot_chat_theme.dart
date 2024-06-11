@@ -162,16 +162,16 @@ class ChatwootChatTheme extends ChatTheme {
             margin: const EdgeInsets.all(16.0),
             textStyle: const TextStyle(),
           ),
-          // typingIndicatorTheme: TypingIndicatorTheme(
-          //   animatedCircleSize: 20.0,
-          //   animatedCirclesColor: Colors.blue,
-          //   bubbleBorder: BorderRadius.circular(8),
-          //   bubbleColor: Colors.white,
-          //   countAvatarColor: Colors.blue,
-          //   countTextColor: Colors.white,
-          //   multipleUserTextStyle:
-          //       TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
-          // ),
+          typingIndicatorTheme: TypingIndicatorTheme(
+            animatedCircleSize: 20.0,
+            animatedCirclesColor: Colors.blue,
+            bubbleBorder: BorderRadius.circular(8),
+            bubbleColor: Colors.white,
+            countAvatarColor: Colors.blue,
+            countTextColor: Colors.white,
+            multipleUserTextStyle:
+                TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+          ),
           // unreadHeaderTheme: UnreadHeaderTheme(
           //   color: Colors.black,
           //   textStyle: TextStyle(),
